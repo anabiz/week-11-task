@@ -179,7 +179,6 @@ app.use(function(err: { message: any; status: any; }, req: { app: { get: (arg0: 
 module.exports = app;
 
 
-
 // catch 404 and forward to error handler
 app.use(function(req: any, res: any, next: (arg0: any) => void) {
   next(createError(404));
