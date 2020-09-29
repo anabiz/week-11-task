@@ -8,12 +8,6 @@ const { strict } = require("assert");
 const { string } = require("joi");
 const { response } = require("express");
 
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
-
-
 
 mongoose
   .connect('mongodb+srv://anabiz:anabiz@cluster0.6hoxu.mongodb.net/organization?retryWrites=true&w=majority', { useNewUrlParser: true,useUnifiedTopology: true })
@@ -57,12 +51,6 @@ async function createOrg(data: any) {
       products: joi.array().items(joi.string()),
       employees: joi.array().items(joi.string()),
       country: joi.string(),
-    });
-let salt = "rest09"
-    bcrypt.genSalt(saltRounds, function (err: any, salt: any) {
-      bcrypt.hash(myPlaintextPassword, salt, function (err: any, hash: any) {
-        // Store hash in your password DB.
-      });
     });
 
     const { error, value } = companyData.validate(data, {

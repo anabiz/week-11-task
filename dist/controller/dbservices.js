@@ -21,10 +21,6 @@ const joi_1 = __importDefault(require("joi"));
 const { strict } = require("assert");
 const { string } = require("joi");
 const { response } = require("express");
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
 mongoose_1.default
     .connect('mongodb+srv://anabiz:anabiz@cluster0.6hoxu.mongodb.net/organization?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("i am in now...here not there"))
@@ -62,12 +58,6 @@ function createOrg(data) {
                 products: joi_1.default.array().items(joi_1.default.string()),
                 employees: joi_1.default.array().items(joi_1.default.string()),
                 country: joi_1.default.string(),
-            });
-            let salt = "rest09";
-            bcrypt.genSalt(saltRounds, function (err, salt) {
-                bcrypt.hash(myPlaintextPassword, salt, function (err, hash) {
-                    // Store hash in your password DB.
-                });
             });
             const { error, value } = companyData.validate(data, {
                 stripUnknown: true,
@@ -177,8 +167,8 @@ function deleteOrg(id) {
 function updateOrg(update, id) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            console.log(update);
-            console.log(id);
+            //console.log(update);
+            //console.log(id);
             const companyData = joi_1.default.object({
                 marketValue: joi_1.default.string().max(3),
                 address: joi_1.default.string().max(255),
