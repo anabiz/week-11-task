@@ -30,7 +30,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           npm install,
-          npx typescript,
-          tsc,
           npm run start,
           npm run test.
