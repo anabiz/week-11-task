@@ -30,4 +30,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           tsc,
+          npm run start,
           npm run test.
