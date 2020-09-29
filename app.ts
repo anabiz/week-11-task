@@ -18,7 +18,7 @@ const {
   GraphQLSchema,
 } = require("graphql");
 require('dotenv').config();
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 
 const db = require("./controller/dbservices");
 
