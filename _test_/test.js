@@ -33,44 +33,44 @@ describe("testing for verious request", () => {
   });
 
   
-  it("creates Organization", async (done) => {
-     request
-       .post("/graphql")
-       .send({
-         query: `mutation{
-  createOrg(input: {
-    organization: "adans1",
-    ceo: "mike",
-    country:"cameroon",
-    address: "kogi west",
-    marketValue:"85",
-    products:["spoon","plates"],
-    employees:["chalse","obinna"],
-    password:"00000",
-    email: "adans@gmail.com",
-  }) {
-    organization
-    ceo
-    marketValue
-    country
-    address
+//   it("creates Organization", async (done) => {
+//      request
+//        .post("/graphql")
+//        .send({
+//          query: `mutation{
+//   createOrg(input: {
+//     organization: "adans1",
+//     ceo: "mike",
+//     country:"cameroon",
+//     address: "kogi west",
+//     marketValue:"85",
+//     products:["spoon","plates"],
+//     employees:["chalse","obinna"],
+//     password:"00000",
+//     email: "adans@gmail.com",
+//   }) {
+//     organization
+//     ceo
+//     marketValue
+//     country
+//     address
     
-  } 
-}`,
-       })
-       .set("Accept", "application.json")
-       .expect("Content-Type", /json/)
-       .end((err, res) => {
-         if (err) return done(err);
-         console.log(res.body);
-         expect(res.body).toBeInstanceOf(Object);
-         console.log(res.body);
-         let value = res.body.data.createOrg;
-         expect(value).toHaveProperty("organization", "adans1");
+//   } 
+// }`,
+//        })
+//        .set("Accept", "application.json")
+//        .expect("Content-Type", /json/)
+//        .end((err, res) => {
+//          if (err) return done(err);
+//          console.log(res.body);
+//          expect(res.body).toBeInstanceOf(Object);
+//          console.log(res.body);
+//          let value = res.body.data.createOrg;
+//          expect(value).toHaveProperty("organization", "adans1");
 
-         done();
-       });
-   });
+//          done();
+//        });
+//    });
   
   
   
@@ -110,30 +110,30 @@ describe("testing for verious request", () => {
   });
 
   
-   it("delete Organization", async (done) => {
-     request
-       .post("/graphql")
-       .send({
-         query: `mutation{
-  deleteOrg(
-   id: "5f722eee0a97bc20b36a4989"
-  ) {
-    id
-  } 
-}`,
-       })
-       .set("Accept", "application.json")
-       .expect("Content-Type", /json/)
-       .end((err, res) => {
-         if (err) return done(err);
-         expect(res.body).toBeInstanceOf(Object);
-         console.log(res.body.data.i);
-         let value = res.body.data.deleteOrg;
-         expect(value).toHaveProperty("id", "5f722eee0a97bc20b36a4989");
+//    it("delete Organization", async (done) => {
+//      request
+//        .post("/graphql")
+//        .send({
+//          query: `mutation{
+//   deleteOrg(
+//    id: "5f722eee0a97bc20b36a4989"
+//   ) {
+//     id
+//   } 
+// }`,
+//        })
+//        .set("Accept", "application.json")
+//        .expect("Content-Type", /json/)
+//        .end((err, res) => {
+//          if (err) return done(err);
+//          expect(res.body).toBeInstanceOf(Object);
+//          console.log(res.body.data.i);
+//          let value = res.body.data.deleteOrg;
+//          expect(value).toHaveProperty("id", "5f722eee0a97bc20b36a4989");
 
-         done();
-       });
-   });
+//          done();
+//        });
+//    });
   
   
   
