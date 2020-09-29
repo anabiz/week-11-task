@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "jest" 
+    "test": "--detectOpenHandles jest" 
   },
   "dependencies": {
     "@types/bcrypt": "^3.0.0",
