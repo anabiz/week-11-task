@@ -1,12 +1,6 @@
 import mongoose from "mongoose";
-//const user ='mongodb+srv://anabiz:anabiz1987@cluster0.gxtll.mongodb.net/<mydb>?retryWrites=true&w=majority'
-const { ObjectId, ObjectID } = require("bson");
-const { getMaxListeners } = require("process");
-const { request } = require("http");
+
 import joi, { number } from "joi";
-const { strict } = require("assert");
-const { string } = require("joi");
-const { response } = require("express");
 
 
 mongoose
